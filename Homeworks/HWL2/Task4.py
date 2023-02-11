@@ -15,8 +15,6 @@
 my_list = input("Введите целые числа через пробел: ").split()
 i = 0
 while (i + 1) < len(my_list):
-    tmp = my_list[i]
-    my_list[i] = my_list[i + 1]
-    my_list[i + 1] = tmp
+    my_list[i], my_list[i + 1] = my_list[i + 1], my_list[i]
     i += 2
 print(f"Результат: {' '.join(my_list)}")
