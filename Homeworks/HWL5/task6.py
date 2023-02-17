@@ -10,8 +10,8 @@
 import random
 
 
-def gamechecknumber(num, countoftry=1):
-    if countoftry > 10:
+def guessing(num, attempt=1):
+    if attempt > 10:
         print(f"Исчерпано 10 попыток. Загаданное число: {num}")
         return
     usernumber = int(input("Ваше число: "))
@@ -20,12 +20,12 @@ def gamechecknumber(num, countoftry=1):
         return
     elif usernumber > num:
         print(f"Загаданное число меньше данного числа!")
-        gamechecknumber(num, countoftry + 1)
+        guessing(num, attempt + 1)
     else:
         print(f"Загаданное число больше данного числа!")
-        gamechecknumber(num, countoftry + 1)
+        guessing(num, attempt + 1)
 
 
 number = random.randint(0, 100)
 print("Загадано число от 0 до 100. Угадайте это число.")
-gamechecknumber(number)
+guessing(number)
