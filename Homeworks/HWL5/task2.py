@@ -20,17 +20,17 @@ def iseven(num):
     return True if num % 2 == 0 else False
 
 
-def getcountevennotevennumbers(num, countevennumbers=0, countnotevennumbers=0):
+def definingnumbers(num, counteven=0, countneven=0):
     if num == 0:
-        return countevennumbers, countnotevennumbers
+        return counteven, countneven
     else:
         if iseven(num % 10):
-            countevennumbers += 1
+            counteven += 1
         else:
-            countnotevennumbers += 1
-        return getcountevennotevennumbers(num // 10, countevennumbers, countnotevennumbers)
+            countneven += 1
+        return definingnumbers(num // 10, counteven, countneven)
 
 
 number = int(input("Введите натуральное число: "))
 
-print(f"Количество четных и нечетных цифр в числе равно: {getcountevennotevennumbers(number)}")
+print(f"Количество четных и нечетных цифр в числе равно: {definingnumbers(number)}")
