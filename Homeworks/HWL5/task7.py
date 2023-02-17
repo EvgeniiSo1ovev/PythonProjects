@@ -12,11 +12,10 @@
 """
 
 
-def getsum(maxelement, element=1):
-    if element > maxelement:
+def getsum(num):
+    if num < 1:
         return 0, ""
-    return element + getsum(maxelement, element + 1)[0], str(element) + "+" + getsum(maxelement, element + 1)[
-        1] if element < maxelement else str(element)
+    return getsum(num - 1)[0] + num, getsum(num - 1)[1] + "+" + str(num) if num > 1 else str(num)
 
 
 n = int(input("для n =: "))
