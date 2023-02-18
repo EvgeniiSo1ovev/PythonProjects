@@ -6,15 +6,19 @@
 """
 
 
-def getlist(a1, d, n):
-    if n == 1:
-        return str(a1)
-    return getlist(a1, d, n - 1) + " " + str(a1 + (n - 1) * d)
+def getlist(nlist, na1, nd, nn):
+    if nn == 1:
+        nlist.append(na1)
+        return nlist
+    getlist(nlist, na1, nd, nn - 1)
+    nlist.append(na1 + (nn - 1) * nd)
+    return nlist
 
 
 a1 = int(input("Введите первый элемент арифметической прогрессии: "))
 d = int(input("Введите разность между элементами арифметической прогрессии: "))
 n = int(input("Введите количество элементов арифметической прогрессии: "))
 
-my_list = getlist(a1, d, n).split()
-print(*my_list)
+my_list = list()
+my_list = getlist(my_list, a1, d, n)
+print(my_list)
