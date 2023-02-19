@@ -10,12 +10,12 @@
 """
 
 
-def getsumelementsofseriesofnumbers(elementofseriesofnumbers, countofelem):
-    if countofelem == 0:
+def getsum(element, count):
+    if count == 0:
         return 0
-    return elementofseriesofnumbers + getsumelementsofseriesofnumbers(elementofseriesofnumbers / (-2), countofelem - 1)
+    return element + getsum(element / (-2), count - 1)
 
 
-countofelements = int(input("Введите количество элементов: "))
+count = int(input("Введите количество элементов: "))
 
-print(f"Количество элементов - {countofelements}, их сумма - {getsumelementsofseriesofnumbers(1, countofelements)}")
+print(f"Количество элементов - {count}, их сумма - {getsum(1, count)}")

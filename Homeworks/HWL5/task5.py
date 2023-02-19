@@ -18,15 +18,15 @@
 """
 
 
-def getcodeandsymbolesofascii(countinrow=1, code=32):
+def printascii(position=1, code=32):
     if code > 127:
         return
-    if countinrow == 10:
+    if position == 10:
         print(f"{code} - {chr(code)}")
-        getcodeandsymbolesofascii(1, code + 1)
+        printascii(1, code + 1)
     else:
         print(f"{code} - {chr(code)}", end=" ")
-        getcodeandsymbolesofascii(countinrow + 1, code + 1)
+        printascii(position + 1, code + 1)
 
 
-getcodeandsymbolesofascii()
+printascii()
