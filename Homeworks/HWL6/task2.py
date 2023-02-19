@@ -20,7 +20,7 @@ def getlist(nlist, nn=10):
 
 
 def getindex(nlist, leftval, rightval):
-    ilist = [i for i in range(0, len(nlist)) if (leftval <= nlist[i] and nlist[i] <= rightval)]
+    ilist = [i for i in range(0, len(nlist)) if (leftval <= nlist[i] <= rightval)]
     return ilist
 
 
