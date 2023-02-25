@@ -65,11 +65,11 @@ def get_data():
 
 def write_to_csv():
     data = get_data()
-    with open('data_report.csv', 'w') as f_n:
+    with open('data_report.csv', 'w', encoding='utf-8') as f_n:
         f_n_writer = csv.writer(f_n)
         for row in data:
             f_n_writer.writerow(row)
-    with open('data_report.csv') as f_n:
+    with open('data_report.csv', encoding='utf-8') as f_n:
         print(f_n.read())
 
 
