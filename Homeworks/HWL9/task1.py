@@ -28,8 +28,10 @@ class NonNegative:
 
     def __set__(self, instance, value):
         if type(value) == dict:
-            if value["wage"] < 0 or value["bonus"] < 0:
-                raise ValueError("не может быть отрицательным!")
+            for val in value.values():
+                if type(val) == int:
+                    if val < 0:
+                        raise ValueError("не может быть отрицательным!")
         else:
             if value < 0:
                 raise ValueError("не может быть отрицательным!")
