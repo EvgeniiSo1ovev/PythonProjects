@@ -23,9 +23,6 @@ class NonNegative:
     def __set_name__(self, owner, my_attr):
         self.my_attr = my_attr
 
-    def __get__(self, instance, owner):
-        return instance.__dict__[self.my_attr]
-
     def __set__(self, instance, value):
         if type(value) == dict:
             for val in value.values():
@@ -36,9 +33,6 @@ class NonNegative:
             if value < 0:
                 raise ValueError("не может быть отрицательным!")
         instance.__dict__[self.my_attr] = value
-
-    def __delete__(self, instance):
-        del instance.__dict__[self.my_attr]
 
 
 class Worker:
